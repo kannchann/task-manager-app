@@ -5,9 +5,9 @@ import TaskItem from "./components/TaskItem";
 function App() {
   const [toDoList, setToDoList] = useState([]);
 
-  const addTask = (taskName) => {
-    const newTask = { taskName, checked: false };
-    setToDoList([...toDoList, newTask]);
+  const addTask = (taskName, priority) => {
+    const newTask = { taskName, priority, checked: false };
+    setToDoList([...toDoList, newTask].sort((a, b) => b.priority - a.priority));
   };
 
   function deleteTask(deleteTaskName){
@@ -26,7 +26,7 @@ function App() {
         <TaskInput addTask={addTask} />
 
         <div className="toDoList">
-          <span>To Do </span>
+          <span>Tasks </span>
           <ul className="list-items">
             {toDoList.map((task, key) => (
               <TaskItem task={task} key={key} deleteTask={deleteTask} toggleCheck={toggleCheck}/>

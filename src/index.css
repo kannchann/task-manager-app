@@ -140,3 +140,26 @@ input[type='checkbox'] {
   padding: 10px;
   background: #282851;
 }
+
+.inputField select {
+  background: #3e3e5a;
+  padding: 5px;
+  color: rgb(161, 160, 160);
+  
+  border: 2px solid rgb(161, 160, 160); /* White border */
+  border-radius: 30px;
+  
+  cursor: pointer;
+}
+
+.inputField select option {
+  background: #3e3e5a;
+  color: rgb(161, 160, 160);
+}
+
+.inputField select:hover {
+  border-color: #3d79b1; /* Change border color on hover */
+}
+
+
+
